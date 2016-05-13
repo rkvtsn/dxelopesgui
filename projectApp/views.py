@@ -732,10 +732,12 @@ def env_delete(request, project):
 
     id = request.POST['id']
 
-    # global environments
-    # environments[:] = [d for d in environments if int(d.get('id')) != int(id)]
+    url = MAIN_URL + "user/{userID}/project/{projectID}/env/{EnvID}" % (quote(user, ''), quote(project, ''), quote(id, ''))
 
-    result = {'result': 'success', 'env_data': []}
+    resp, content = make_request(url, 'DELETE', request)
+    if resp.status == 200:
+        result = {'result': 'success'}
+
     return JsonResponse(result)
 
 

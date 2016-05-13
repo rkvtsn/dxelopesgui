@@ -39,7 +39,7 @@ $(document).ready(function () {
 
         $.post(form.attr('action'), data, function (json) {
             if (json['result'] == 'error') {
-                alert('Ajax: Error.')
+                console.log('Ajax: Error.')
             }
             else {
                 window.location.reload();
