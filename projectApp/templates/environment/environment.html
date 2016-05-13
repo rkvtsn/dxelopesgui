@@ -104,14 +104,14 @@
 
 
     {% if env_data %}
-        {% for env in env_data %}
+        {% for env_id, env_name in env_data.items %}
 
                 <div class="elem">
                 <div class="top">
-                    <a href="{% url 'env_details' project_name env.id %}" class="name">{{ env.name }}</a>
+                    <a href="{% url 'env_details' project_name env_id %}" class="name">{{ env_name }}</a>
 
                     <div class="controls">
-                        <a class="remove" data-toggle="modal" data-target="#modal_delete" item-name="{{ env.name }}" item-id="{{ env.id }}" href="#" data-toggle="tooltip" data-placement="bottom"
+                        <a class="remove" data-toggle="modal" data-target="#modal_delete" item-name="{{ env_name }}" item-id="{{ env_id }}" href="#" data-toggle="tooltip" data-placement="bottom"
                            title="Delete"><span class="glyphicon glyphicon-remove"></span></a>
                     </div>
 

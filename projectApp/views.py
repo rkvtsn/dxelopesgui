@@ -260,6 +260,11 @@ get_env3_resp = {
 
 env_resp = list([get_env1_resp, get_env2_resp, get_env3_resp])
 
+env_list_resp = {
+    "88da4d05-2d9f-4f59-882a-2084a7c1bdf1": "model5",
+    "abccbfe5-47c7-4e9e-b440-fd5f47aaf223": "model4",
+    "bc5e23fa-231b-4a17-a146-c3288331b1b8": "MultiThread 4"
+}
 
 MAIN_URL = "http://127.0.0.1:8080/dmcapi/"
 DATA_URL = "http://localhost:8080/DataType/MetaData/"
@@ -589,14 +594,14 @@ def env(request, project):
     # options = json.loads(s_data)
     options = json.dumps(options_resp)
 
-    environments = []
+    env_data = env_list_resp
 
     # resp, content = make_request(url=MAIN_URL + "/user/" + quote(user_name, '') + "/project/" + quote(project, '') + "/env/", request=request, method='GET')
     # environments = content.decode('utf-8')
 
     return render(request, 'environment/environment.html', {'options': options,
                                                             'user': user_name,
-                                                            'env_data': environments,
+                                                            'env_data': env_data,
                                                             'project_name': project})
 
 
@@ -607,7 +612,11 @@ def env_details(request, project, id):
     #url = MAIN_URL + "user/%s/project/%s/env/%s" % (quote(user_name, ''), quote(project, ''), quote(id, ''))
 
     #env = get_env1_resp
-    env = env_resp[int(id)]
+    if id in ('0', '1', '2'):
+        env = env_resp[int(id)]
+    else:
+        env = env_resp[0]
+
 
     # if len(result) == 0:
     #     return render(request, 'my404.html', {'user': user_name,
@@ -723,10 +732,10 @@ def env_delete(request, project):
 
     id = request.POST['id']
 
-    global environments
-    environments[:] = [d for d in environments if int(d.get('id')) != int(id)]
+    # global environments
+    # environments[:] = [d for d in environments if int(d.get('id')) != int(id)]
 
-    result = {'result': 'success', 'env_data': environments}
+    result = {'result': 'success', 'env_data': []}
     return JsonResponse(result)
 
 
