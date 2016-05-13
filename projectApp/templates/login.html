@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DXelopesGUI</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'vendors/bootstrap-3.3.4-dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'vendors/handsontable-master/dist/handsontable.full.min.css' %}"/>
+    <link rel="stylesheet"
+          href="{% static 'vendors/handsontable-master/plugins/removeRow/handsontable.removeRow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <script src="{% static 'vendors/jquery-1.11.2.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-3.3.4-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/handsontable-master/dist/handsontable.full.min.js' %}"></script>
+    <script src="{% static 'vendors/handsontable-master/plugins/removeRow/handsontable.removeRow.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/scriptData.js' %}"></script>
+    <script src="{% static 'js/scriptEnvironmentConfiguration.js' %}"></script>
+    <script src="{% static 'js/scriptTaskConfiguration.js' %}"></script>
+    <script src="{% static 'js/scriptTasks.js' %}"></script>
+    <script src="{% static 'js/env.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/">DXelopesGUI</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    {% block main %}
+
+        <div class="l-login-form">
+        <form action="{% url 'login' %}" id="formLogIn">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalLogInLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span
+                                    class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Name"
+                                   aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span
+                                    class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" name="password" id="password" class="form-control"
+                                   placeholder="Password"
+                                   aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Access</button>
+                </div>
+            </form>
+        </div>
+
+    {% endblock %}
+</div>
+<footer>
+    <div class="container-fluid">
+        <p>СПбГЭТУ (ЛЭТИ)</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block aside-menu %}
+    <ul class="nav nav-pills nav-stacked">
+        <li class="link-data"><a href="{% url 'data' project_name %}">Data</a></li>
+        <li class="link-environment active"><a href="{% url 'env' project_name %}">Environment configuration</a></li>
+        <li class="link-task"><a href="{% url 'taskconf' project_name %}">Function settings</a></li>
+        <li class="link-tasks"><a href="{% url 'tasks' project_name %}">Tasks</a></li>
+        <li class="link-models"><a href="{% url 'models' project_name %}">Models</a></li>
+        <li class="link-log"><a href="{% url 'history' project_name %}">LOG</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {% load staticfiles %}
+    <script src="{% static 'js/env.js' %}"></script>
+
+    <script>
+        var options = {{ options|safe }};
+    </script>
+
+    <h1>New environment configuration</h1>
+
+    <form action="add" id="env-conf">
+        {% csrf_token %}
+
+        <div id="envOptions"></div>
+
+        <div class="form-group row">
+            <div class="col-xs-3">
+                <label for="environment">Environment type:</label>
+            </div>
+            <div class="col-xs-9">
+                <select name="type" id="environment" class="form-control">
+                </select>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-options tableOptEnvironment">
+            <caption>Environment options</caption>
+            <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+        <table class="table table-bordered table-striped table-options tableOptServer">
+            <caption>Server options</caption>
+            <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary"/>
+        </div>
+
+    </form>
+
+
+
+
+{% endblock %}
+
+
+
+{% block saved %}
+    <h3>Saved configurations:</h3>
+
+
+    <div class="modal fade" id="modal_delete" role="dialog">
+        <form class="form" id="form_delete" action="{% url 'env_delete' project_name %}">
+            {% csrf_token %}
+            <input type="hidden" id="id" name="id" value="" />
+        </form>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="modal-title" class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="agree" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% if env_data %}
+        {% for env in env_data %}
+
+                <div class="elem">
+                <div class="top">
+                    <a href="{% url 'env_details' project_name env.id %}" class="name">{{ env.name }}</a>
+
+                    <div class="controls">
+                        <a class="remove" data-toggle="modal" data-target="#modal_delete" item-name="{{ env.name }}" item-id="{{ env.id }}" href="#" data-toggle="tooltip" data-placement="bottom"
+                           title="Delete"><span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+
+                </div>
+
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p></p>
+    {% endif %}
+{% endblock %}

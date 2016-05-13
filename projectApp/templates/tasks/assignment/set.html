@@ -1,0 +1,120 @@
+<style>
+    .blockSet {
+        display: none;
+    }
+
+    .blockSet.active {
+        display: block;
+    }
+</style>
+
+<div class="radio">
+    <label>
+        <input type="radio" name="optionSet" id="optionUnion" value="optionUnion" checked>
+        <strong>Объединение</strong>
+    </label>
+</div>
+<div class="radio">
+    <label>
+        <input type="radio" name="optionSet" id="optionSplitting" value="optionUnion">
+        <strong>Расщипление</strong>
+    </label>
+</div>
+
+<div class="blockSet active" id="blockUnion">
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <p><strong>Физические атрибуты</strong></p>
+
+            <div id="physicalTable1"></div>
+        </div>
+        <div class="col-xs-6">
+            <p><strong>Логический атрибут</strong></p>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <input type="text" name="name" id="name" placeholder="Имя логического атрибута"
+                           class="form-control"/>
+                </div>
+                <div class="col-xs-6">
+                    <select name="logicalType" id="logicalType1" class="form-control">
+                        <option value="">Выберите тип...</option>
+                        {% for t in types %}
+                            <option value="{{ t }}">{{ t }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group clearfix">
+        <a class="btn btn-success right" href="#" id="link-more-union"><span class="glyphicon glyphicon-plus"></span>Назначить
+            ещё</a>
+    </div>
+</div>
+
+<div class="blockSet" id="blockSplitting">
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <p><strong>Физический атрибут</strong></p>
+        </div>
+        <div class="col-xs-6">
+            <p><strong>Логические атрибуты</strong></p>
+        </div>
+    </div>
+    <div class="form-group clearfix">
+        <a class="btn btn-success right" href="#"><span class="glyphicon glyphicon-plus"></span>Назначить ещё</a>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+
+        //  переключение ----------------------------------
+        var radio = $('.radio').find('input');
+
+        radio.change(function () {
+            $('.blockSet').toggleClass('active');
+        });
+
+        //  объединение -----------------------------------
+
+        var physicalSetsArr = ["physicalTable1"];
+
+        var physicalHeader = ["Наименование (тип)"];
+
+        var data = [
+            [""]
+        ];
+
+        function initPhysicalTable(id) {
+            var container = document.getElementById(id);
+
+            var table = new Handsontable(container, {
+                data: data,
+                minRows: 1,
+                minSpareRows: 1,
+                colHeaders: physicalHeader,
+                copyPaste: false,
+                fillHandle: false,
+                removeRowPlugin: true,
+                columns: [
+                    {
+                        editor: 'select',
+                        selectOptions: {{ attributes | safe }}
+                    }
+                ]
+            });
+        }
+
+        initPhysicalTable('physicalTable1');
+
+        $('#link-more-union').click(function (event) {
+            event.preventDefault();
+        });
+
+        //  расщипление ----------------------------------
+
+    });
+</script>

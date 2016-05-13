@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-xs-4">
+        <p><strong>Физические атрибуты</strong></p>
+        <div id="table"></div>
+    </div>
+    <div class="col-xs-4">
+        <label for="selectAttribute">Функция выбора атрибута:</label>
+        <select name="selectAttribute" id="selectAttribute" class="form-control">
+            <option value="select">Select...</option>
+            {% for select_attr in functions_select_attribute %}
+                <option value="{{ select_attr }}">{{ select_attr }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-xs-4">
+        <label for="selectValue">Функция выбора значения:</label>
+        <select name="selectValue" id="selectValue" class="form-control">
+            <option value="select">Select...</option>
+            {% for select_value in functions_select_value %}
+                <option value="{{ select_value }}">{{ select_value }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        var container = document.getElementById('table');
+
+        var header = ["Наименование (тип)"];
+
+        var data = [
+            []
+        ];
+
+        var table = new Handsontable(container, {
+            data: data,
+            minRows: 1,
+            minSpareRows: 1,
+            colHeaders: header,
+            copyPaste: false,
+            fillHandle: false,
+            removeRowPlugin: true,
+            columns: [
+                {
+                    editor: 'select',
+                    selectOptions: {{ attributes | safe }}
+                }
+            ]
+        });
+
+        $('.getData').click(function(event){
+            event.preventDefault();
+
+            var newData = table.getData();
+
+            alert(newData + '');
+        });
+
+    });
+</script>

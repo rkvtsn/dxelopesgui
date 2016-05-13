@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="django" name="Django">
+      <configuration>
+        <option name="rootFolder" value="$MODULE_DIR$" />
+        <option name="settingsModule" value="dxelopesGUI/settings.py" />
+        <option name="manageScript" value="manage.py" />
+        <option name="environment" value="&lt;map/&gt;" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="Python 3.5.1 (C:\Users\Andrey\AppData\Local\Programs\Python\Python35\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/doc" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/demo" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/d" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/q" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/r" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/go" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/vb" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/apl" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/css" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/dtd" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/ecl" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/gas" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/gfm" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/idl" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/lua" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/php" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/pig" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/rpm" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/rpm/changes" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/rst" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/soy" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/sql" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/tcl" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/xml" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/z80" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/dart" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/diff" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/ebnf" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/haml" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/haxe" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/http" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/jade" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/mirc" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/perl" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/ruby" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/rust" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/sass" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/slim" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/solr" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/stex" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/tiki" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/toml" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/yaml" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/clike" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/cmake" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/cobol" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/dylan" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/forth" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/julia" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/nginx" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/pegjs" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/shell" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/sieve" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/troff" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/cypher" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/django" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/eiffel" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/erlang" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/groovy" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/jinja2" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/kotlin" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/mllike" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/octave" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/pascal" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/puppet" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/python" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/scheme" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/smarty" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/sparql" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/stylus" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/turtle" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/xquery" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/clojure" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/fortran" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/gherkin" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/haskell" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/textile" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/tornado" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/verilog" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/asterisk" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/markdown" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/modelica" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/ntriples" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/vbscript" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/velocity" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/htmlmixed" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/smalltalk" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/asciiarmor" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/commonlisp" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/dockerfile" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/javascript" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/livescript" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/properties" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/tiddlywiki" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/spreadsheet" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/coffeescript" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/mode/htmlembedded" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/codemirror/codemirror-5.1/test" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master/src/3rdparty/walkontable" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master/src/3rdparty/walkontable/test/jasmine" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master/src/3rdparty/walkontable/test/performance" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master/demo" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master/test/jasmine" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/handsontable-master/test/performance" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/jQuery-File-Upload-9.9.3" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/jQuery-File-Upload-9.9.3/cors" />
+        <option value="$MODULE_DIR$/projectApp/static/vendors/jQuery-File-Upload-9.9.3/test" />
+        <option value="$MODULE_DIR$/projectApp/templates" />
+        <option value="$MODULE_DIR$/projectApp/templates/data" />
+        <option value="$MODULE_DIR$/projectApp/templates/task" />
+        <option value="$MODULE_DIR$/projectApp/templates/tasks" />
+        <option value="$MODULE_DIR$/projectApp/templates/tasks/assignment" />
+        <option value="$MODULE_DIR$/projectApp/templates/models" />
+        <option value="$MODULE_DIR$/projectApp/templates/history" />
+        <option value="$MODULE_DIR$/projectApp/templates/environment" />
+      </list>
+    </option>
+  </component>
+</module>

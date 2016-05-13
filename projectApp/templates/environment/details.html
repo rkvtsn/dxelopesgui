@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block aside-menu %}
+    <ul class="nav nav-pills nav-stacked">
+        <li class="link-data"><a href="{% url 'data' project_name %}">Data</a></li>
+        <li class="link-environment active"><a href="{% url 'env' project_name %}">Environment configuration</a></li>
+        <li class="link-task"><a href="{% url 'taskconf' project_name %}">Function settings</a></li>
+        <li class="link-tasks"><a href="{% url 'tasks' project_name %}">Tasks</a></li>
+        <li class="link-models"><a href="{% url 'models' project_name %}">Models</a></li>
+        <li class="link-log"><a href="{% url 'history' project_name %}">LOG</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Environment: {{ env_data.name }}</h1>
+
+    <h2>Information:</h2>
+    <div style="font-size: 1.2em;text-transform: capitalize;">
+    {% for k, v in env_data.items %}
+        {% if k != 'name' and k != 'servers' and k != 'id' %}
+                <div>{{ k }}: <span style="" >{{ v }}</span></div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <h2>Servers:</h2>
+    <div class="row">
+    {% for server in env_data.servers %}
+        <div class="col-md-3" style="font-size: 1.2em;{% if server.status == 'ACTIVE' %}background: #33ccaa; {% else %} background: #cc3344;  {% endif %} margin-left: 10px; color: #fff;">
+        <h3>{{ server.name }}</h3>
+        <table class="table" style="text-transform: capitalize;">
+            {% for k, v in server.items %}
+                {% if k != 'name' and k != 'servers' and k != 'id' %}
+            <tr>
+                <td>
+                    <div class="row">
+                        <div class="col-md-4">{{ k }}</div>
+                        <div class="col-md-4">{{ v }}</div>
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,402 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding-bottom: 79px;
+    position: relative;
+    min-height: 100%;
+}
+
+textarea.form-control {
+    height: 200px;
+    resize: none;
+}
+
+.title-projlist {
+    margin-bottom: 30px;
+}
+
+.table-options label {
+    font-weight: normal;
+}
+
+.table-options tbody td {
+    width: 50%;
+}
+
+.controls {
+    width: 89px;
+}
+
+.controls a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.l-login-form {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+    margin: 0 auto;
+    width: 298px;
+}
+
+
+
+
+
+/*
+=============================================================
+    Боковое меню
+=============================================================
+*/
+
+.aside-menu .nav a {
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 45px;
+
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+/* Данные */
+.aside-menu .link-data a {
+    background-image: url("../images/icons/data-icon.png");
+}
+
+.aside-menu .link-data a:hover {
+    background-image: url("../images/icons/data-icon-hover.png");
+}
+
+.aside-menu .link-data.active a {
+    background-image: url("../images/icons/data-icon-active.png");
+}
+
+/* Среда */
+.aside-menu .link-environment a {
+    background-image: url("../images/icons/environment-icon.png");
+}
+
+.aside-menu .link-environment:hover a {
+    background-image: url("../images/icons/environment-icon-hover.png");
+}
+
+.aside-menu .link-environment.active a {
+    background-image: url("../images/icons/environment-icon-active.png");
+}
+
+/* Задача */
+.aside-menu .link-task a {
+    background-image: url("../images/icons/setting-task-icon.png");
+}
+
+.aside-menu .link-task:hover a {
+    background-image: url("../images/icons/setting-task-icon-hover.png");
+}
+
+.aside-menu .link-task.active a {
+    background-image: url("../images/icons/setting-task-icon-active.png");
+}
+
+/* Задачи */
+.aside-menu .link-tasks a {
+    background-image: url("../images/icons/tasks-icon.png");
+}
+
+.aside-menu .link-tasks:hover a {
+    background-image: url("../images/icons/tasks-icon-hover.png");
+}
+
+.aside-menu .link-tasks.active a {
+    background-image: url("../images/icons/tasks-icon-active.png");
+}
+
+/* Модели */
+.aside-menu .link-models a {
+    background-image: url("../images/icons/models-icon.png");
+}
+
+.aside-menu .link-models:hover a {
+    background-image: url("../images/icons/models-icon-hover.png");
+}
+
+.aside-menu .link-models.active a {
+    background-image: url("../images/icons/models-icon-active.png");
+}
+
+/* LOG */
+.aside-menu .link-log a {
+    background-image: url("../images/icons/log-icon.png");
+}
+
+.aside-menu .link-log:hover a {
+    background-image: url("../images/icons/log-icon-hover.png");
+}
+
+.aside-menu .link-log.active a {
+    background-image: url("../images/icons/log-icon-active.png");
+}
+
+/*
+=============================================================
+    End Боковое меню
+=============================================================
+*/
+
+
+
+
+
+.uploaded-data {
+    margin: 21px 0 0;
+}
+
+#listData {
+    padding: 0 0 0 17px;
+}
+
+.right {
+    float: right;
+}
+
+
+
+
+
+/*
+=============================================================
+    Handsontable
+=============================================================
+*/
+
+.handsontable .htDimmed {
+    color: #333;
+}
+
+.handsontable.htRemoveRow th.htRemoveRow .btn {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    border-radius: 4px;
+    display: block !important;
+    height: 15px;
+    margin: 2px auto 0;
+    padding: 0;
+    width: 15px;
+}
+
+.handsontable.htRemoveRow th.htRemoveRow .btn:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+.handsontable .handsontable table {
+    box-shadow: none;
+}
+
+/*
+=============================================================
+    End Handsontable
+=============================================================
+*/
+
+
+
+
+
+/*
+=============================================================
+    Сохранённые данные, настройки, задачи, модели
+=============================================================
+*/
+
+.elem {
+    border-bottom: 1px solid #ccc;
+    padding: 3px 10px 2px;
+}
+
+.elem .name {
+    display: inline-block;
+    max-width: 230px;
+}
+
+.elem .controls {
+    float: right;
+}
+
+.elem .more {
+    color: #000;
+    margin: 0 5px;
+}
+
+.elem .change {
+    color: #f0ad4e;
+    margin: 0 5px;
+}
+
+.elem .remove {
+    color: #f00;
+    margin: 0 5px;
+}
+
+.elem .bottom {
+    margin: 5px 0 0;
+}
+
+.elem .table {
+    margin: 0;
+}
+
+.elem .table>tbody>tr>td {
+    border: 0 none;
+}
+
+/*
+=============================================================
+    End Сохранённые данные, настройки, задачи, модели
+=============================================================
+*/
+
+
+
+
+
+/*
+=============================================================
+    Шаги
+=============================================================
+*/
+
+.tasks-steps {
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px 0;
+}
+
+.tasks-steps .step {
+    background: #fff;
+    color: #ccc;
+    height: 65px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.tasks-steps .col-xs-3:after {
+    background: #333;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    content: "";
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin: -3px 0 0;
+    width: 6px;
+    z-index: 1;
+}
+
+.tasks-steps .col-xs-3:last-child:after {
+    display: none;
+}
+
+.tasks-steps .step span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tasks-steps .step.active {
+    color: #333;
+}
+
+.tasks-steps .step.active span {
+    color: #FFB921;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/*
+=============================================================
+    End Шаги
+=============================================================
+*/
+
+
+
+
+
+/**/
+
+.pivot-group {
+    border-top: 1px solid #ccc;
+    padding: 15px 0 0;
+}
+
+.pivot-group:first-child {
+    border-top: 0 none;
+    padding: 0;
+}
+
+/**/
+
+
+
+
+
+/*
+=============================================================
+    Подвал
+=============================================================
+*/
+
+footer {
+    background: #222;
+    border: 1px solid #080808;
+    color: #9d9d9d;
+    font-size: 12px;
+    margin: 20px 0 0;
+    padding: 20px 0 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/*
+=============================================================
+    End Подвал
+=============================================================
+*/
+
+
+
+
+
+/*
+=============================================================
+    Clear Fix
+=============================================================
+*/
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+=============================================================
+    End Clear Fix
+=============================================================
+*/

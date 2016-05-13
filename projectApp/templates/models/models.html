@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block aside-menu %}
+    <ul class="nav nav-pills nav-stacked">
+        <li class="link-data"><a href="{% url 'data' project_name %}">Data</a></li>
+        <li class="link-environment"><a href="{% url 'env' project_name %}">Environment configuration</a></li>
+        <li class="link-task"><a href="{% url 'taskconf' project_name %}">Function settings</a></li>
+        <li class="link-tasks"><a href="{% url 'tasks' project_name %}">Tasks</a></li>
+        <li class="link-models active"><a href="{% url 'models' project_name %}">Models</a></li>
+        <li class="link-log"><a href="{% url 'history' project_name %}">LOG</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <h1>Models</h1>
+{% endblock %}

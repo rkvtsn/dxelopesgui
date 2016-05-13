@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DXelopesGUI</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'vendors/bootstrap-3.3.4-dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'vendors/handsontable-master/dist/handsontable.full.min.css' %}"/>
+    <link rel="stylesheet"
+          href="{% static 'vendors/handsontable-master/plugins/removeRow/handsontable.removeRow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <script src="{% static 'vendors/jquery-1.11.2.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-3.3.4-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/handsontable-master/dist/handsontable.full.min.js' %}"></script>
+    <script src="{% static 'vendors/handsontable-master/plugins/removeRow/handsontable.removeRow.js' %}"></script>
+    <script src="{% static 'vendors/jquery.dform-1.1.0.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/scriptData.js' %}"></script>
+    <script src="{% static 'js/scriptEnvironmentConfiguration.js' %}"></script>
+    <script src="{% static 'js/scriptTaskConfiguration.js' %}"></script>
+    <script src="{% static 'js/scriptTasks.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/">DXelopesGUI</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <p class="navbar-text"><strong>{{ project_name }}</strong></p>
+
+            {% if user %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-expanded="false">
+                            {{ user }}
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{% url 'project_list' %}">My Projects</a></li>
+                            <li><a href="{% url 'account' %}">My Account</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="{% url 'logout' %}" class="link-logout">
+                                    <span class="glyphicon glyphicon-log-out"></span>&ensp;Log out
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            {% else %}
+                <div class="navbar-right">
+                    <button type="button" data-toggle="modal" data-target="#modalLogIn"
+                            class="btn btn-primary navbar-btn btn-sm" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&emsp;LogIn
+                    </button>
+                    <a href="#" data-toggle="modal" data-target="#modalReg"
+                       class="btn btn-primary navbar-btn btn-sm">SignUp</a>
+                </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    {% block main %}
+
+    {% endblock %}
+</div>
+<footer>
+    <div class="container-fluid">
+        <p>Saint Petersburg Electrotechnical University "LETI"</p>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal fade" id="modalLogIn" tabindex="-1" role="dialog" aria-labelledby="modalLogInLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <form action="{% url 'login' %}" id="formLogIn">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLogInLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span
+                                    class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Name"
+                                   aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span
+                                    class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" name="password" id="password" class="form-control"
+                                   placeholder="Password"
+                                   aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Access</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalReg" tabindex="-1" role="dialog" aria-labelledby="modalRegLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <form action="{% url 'registration' %}" id="formReg">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalRegLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span
+                                    class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" name="name" id="reg-name" class="form-control" placeholder="Name"
+                                   aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span
+                                    class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" name="password" id="reg-password" class="form-control"
+                                   placeholder="Password"
+                                   aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Access</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalCreateProject" tabindex="-1" role="dialog" aria-labelledby="modalCreateProjectLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{% url 'new_project' %}" id="formNewProject">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalCreateProjectLabel">New project</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-messages"></div>
+                    <div class="form-group">
+                        <label for="projname">Enter the name of the project:</label>
+                        <input type="text" name="projname" id="projname" class="form-control"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

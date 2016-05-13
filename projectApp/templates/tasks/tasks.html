@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block aside-menu %}
+    <ul class="nav nav-pills nav-stacked">
+        <li class="link-data"><a href="{% url 'data' project_name %}">Data</a></li>
+        <li class="link-environment"><a href="{% url 'env' project_name %}">Environment configuration</a></li>
+        <li class="link-task"><a href="{% url 'taskconf' project_name %}">Function settings</a></li>
+        <li class="link-tasks active"><a href="{% url 'tasks' project_name %}">Tasks</a></li>
+        <li class="link-models"><a href="{% url 'models' project_name %}">Models</a></li>
+        <li class="link-log"><a href="{% url 'history' project_name %}">LOG</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <h1>New mining model:</h1>
+
+    <div class="error-messages"></div>
+
+    <form action="{% url 'new_task' project_name %}" id="formTasks">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="select_environment">Environment:</label>
+            <select name="select_environment" id="select_environment" class="form-control">
+                <option value="">Select environment...</option>
+                {% for environment in environment_list %}
+                    <option value="{{ environment }}">{{ environment }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="select_mining_function">Mining Function:</label>
+            <select name="select_mining_function" id="select_mining_function" class="form-control">
+                <option value="">Select mining function...</option>
+                {% for mining_function in mining_function_list %}
+                    <option value="{{ mining_function }}">{{ mining_function }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group groupDataSets">
+            <p><strong>Physical data set(s):</strong></p>
+
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="dataSet0">Data set:</label>
+                </div>
+                <div class="col-xs-9 l-select-container">
+                    <select name="dataSet0" id="dataSet0" class="form-control">
+                        <option value="">Select...</option>
+                        {% for physicalDataSet in listPhysicalDataSet %}
+                            <option value="{{ physicalDataSet }}">{{ physicalDataSet }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <a class="btn btn-success right" href="#" id="addNewPhysicalDataSet">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+            </a>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Apply</button>
+        </div>
+    </form>
+
+{% endblock %}
+
+{% block saved %}
+    <h3>Tasks:</h3>
+
+    {% if saved_data %}
+        {% for saved in saved_data %}
+
+            <div class="elem">
+                <div class="top">
+                    <a data-toggle="collapse" href="#collapse{{ forloop.counter0 }}" aria-expanded="false"
+                       aria-controls="collapse" class="name">{{ saved }}
+                    </a>
+
+                    <div class="controls">
+                        <a class="more" href="{% url 'detail_task' project_name saved %}" data-toggle="tooltip"
+                           data-placement="bottom"
+                           title="Посмотреть подробную информацию"><span
+                                class="glyphicon glyphicon-eye-open"></span></a>
+                        <a class="change" href="#" data-toggle="tooltip" data-placement="bottom"
+                           title="Изменить"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a class="remove" href="{% url 'delete_task' project_name saved %}" data-toggle="tooltip"
+                           data-placement="bottom"
+                           title="Удалить"><span
+                                class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+
+                </div>
+                <div class="bottom">
+                    <div class="collapse" id="collapse{{ forloop.counter0 }}">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td><strong>Name:</strong></td>
+                                <td>{{ saved }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p></p>
+    {% endif %}
+{% endblock %}

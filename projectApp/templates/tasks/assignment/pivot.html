@@ -1,0 +1,48 @@
+<div class="pivot-group-container">
+    <div class="pivot-group">
+        <div class="form-group row">
+            <div class="col-xs-5">
+                <label for="select1">Attribute - identifier</label>
+            </div>
+            <div class="col-xs-7">
+                <select name="select1" id="select1" class="form-control">
+                    <option value="select">Select...</option>
+                    {% for attr in attributes %}
+                        <option value="{{ attr.0 }}">{{ attr.0 }} ({{ attr.1 }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-xs-5">
+                <label for="select2">Attribute - name</label>
+            </div>
+            <div class="col-xs-7">
+                <select name="select2" id="select2" class="form-control">
+                    <option value="select">Select...</option>
+                    {% for attr in attributes %}
+                        <option value="{{ attr.0 }}">{{ attr.0 }} ({{ attr.1 }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-xs-5">
+                <label for="select3">Attribute - value</label>
+            </div>
+            <div class="col-xs-7">
+                <select name="select3" id="select3" class="form-control">
+                    <option value="select">Select...</option>
+                    {% for attr in attributes %}
+                        <option value="{{ attr.0 }}">{{ attr.0 }} ({{ attr.1 }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

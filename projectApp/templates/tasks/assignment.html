@@ -1,0 +1,30 @@
+{% extends "tasks/tasks.html" %}
+
+{% block content %}
+
+    <h1>New task of building a mining model:</h1>
+
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="typeAssignment">Select type of assignment:</label>
+            <select name="typeAssignment" id="typeAssignment" class="form-control" data-url="{% url 'get_assignment_settings' project_name %}">
+                {% for type in typeTransform %}
+                    <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="well">
+            <div id="panelTasksSettings"></div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                Далее <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </button>
+        </div>
+    </form>
+
+{% endblock %}
+
+{% block saved %}
+
+{% endblock %}

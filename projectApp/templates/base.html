@@ -1,0 +1,110 @@
+{% extends 'main.html' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-3 aside-menu">
+            {% block aside-menu %}
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="link-data"><a href="{% url 'data' %}">Данные</a></li>
+                    <li class="link-environment"><a href="#">Настройка среды</a></li>
+                    <li class="link-task"><a href="#">Настройка задачи</a></li>
+                    <li class="link-tasks"><a href="{% url 'tasks' %}">Задачи</a></li>
+                    <li class="link-models"><a href="#">Модели</a></li>
+                    <li class="link-log"><a href="#">LOG</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+        <div class="col-md-6">
+            {% block content %}
+                <p>center</p>
+            {% endblock %}
+        </div>
+        <div class="col-md-3">
+            {% block saved %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+{##}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <title>DXelopesGUI</title>#}
+{##}
+{#    {% load staticfiles %}#}
+{#    <link rel="stylesheet" href="{% static 'vendors/bootstrap-3.3.4-dist/css/bootstrap.min.css' %}"/>#}
+{#    <link rel="stylesheet" href="{% static 'vendors/handsontable-master/dist/handsontable.full.min.css' %}"/>#}
+{#    <link rel="stylesheet"#}
+{#          href="{% static 'vendors/handsontable-master/plugins/removeRow/handsontable.removeRow.css' %}"/>#}
+{#    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>#}
+{#    <script src="{% static 'vendors/jquery-1.11.2.js' %}"></script>#}
+{#    <script src="{% static 'vendors/bootstrap-3.3.4-dist/js/bootstrap.min.js' %}"></script>#}
+{#    <script src="{% static 'vendors/handsontable-master/dist/handsontable.full.min.js' %}"></script>#}
+{#    <script src="{% static 'vendors/handsontable-master/plugins/removeRow/handsontable.removeRow.js' %}"></script>#}
+{#    <script src="{% static 'js/script.js' %}"></script>#}
+{#    <script src="{% static 'js/scriptData.js' %}"></script>#}
+{#    <script src="{% static 'js/scriptTaskConfiguration.js' %}"></script>#}
+{#</head>#}
+{#<body>#}
+{#<nav class="navbar navbar-default">#}
+{#    <div class="container-fluid">#}
+{#        <div class="navbar-header">#}
+{#            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"#}
+{#                    data-target="#bs-example-navbar-collapse-1">#}
+{#                <span class="sr-only">Toggle navigation</span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#            </button>#}
+{##}
+{#            <a class="navbar-brand" href="/">DXelopesGUI</a>#}
+{##}
+{#            <p class="navbar-text">Project Name</p>#}
+{#        </div>#}
+{#        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">#}
+{#            <ul class="nav navbar-nav navbar-right">#}
+{#                <li class="dropdown">#}
+{#                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">#}
+{#                        User Name#}
+{#                        <span class="caret"></span></a>#}
+{#                    <ul class="dropdown-menu" role="menu">#}
+{#                        <li><a href="{% url 'project_list' %}">My Projects</a></li>#}
+{#                        <li><a href="{% url 'account' %}">My Account</a></li>#}
+{#                        <li class="divider"></li>#}
+{#                        <li><a href="#">Exit</a></li>#}
+{#                    </ul>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</nav>#}
+{#<div class="container-fluid">#}
+{#    <div class="row">#}
+{#        <div class="col-md-3 aside-menu">#}
+{#            {% block aside-menu %}#}
+{#                <ul class="nav nav-pills nav-stacked">#}
+{#                    <li class="link-data"><a href="{% url 'data' %}">Данные</a></li>#}
+{#                    <li class="link-environment"><a href="#">Настройка среды</a></li>#}
+{#                    <li class="link-task"><a href="#">Настройка задачи</a></li>#}
+{#                    <li class="link-tasks"><a href="{% url 'tasks' %}">Задачи</a></li>#}
+{#                    <li class="link-models"><a href="#">Модели</a></li>#}
+{#                    <li class="link-log"><a href="#">LOG</a></li>#}
+{#                </ul>#}
+{#            {% endblock %}#}
+{#        </div>#}
+{#        <div class="col-md-6">#}
+{#            {% block content %}#}
+{#                <p>center</p>#}
+{#            {% endblock %}#}
+{#        </div>#}
+{#        <div class="col-md-3">#}
+{#            {% block saved %}{% endblock %}#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<footer>#}
+{#    <div class="container-fluid">#}
+{#        <p>СПбГЭТУ (ЛЭТИ)</p>#}
+{#    </div>#}
+{#</footer>#}
+{#</body>#}
+{#</html>#}

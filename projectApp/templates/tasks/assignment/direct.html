@@ -1,0 +1,39 @@
+<div id="table"></div>
+
+<script>
+    $(document).ready(function () {
+        var header = ["Name", "Type", "Name", "Type"];
+
+        var container = document.getElementById('table');
+
+        var table = new Handsontable(container, {
+            data: {{ attributes | safe }},
+            minSpareRows: 0,
+            colHeaders: header,
+            copyPaste: false,
+            fillHandle: false,
+            removeRowPlugin: true,
+            columns: [
+                {
+                    readOnly: true
+                },
+                {
+                    readOnly: true
+                },
+                {},
+                {
+                    editor: 'select',
+                    selectOptions: {{ typesLogicalData | safe }}
+                }
+            ]
+        });
+
+        $('.getData').click(function(event){
+            event.preventDefault();
+
+            var newData = table.getData();
+
+            alert(newData + '');
+        })
+    });
+</script>

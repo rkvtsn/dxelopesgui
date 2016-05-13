@@ -1,0 +1,16 @@
+{% extends 'tasks/tasks.html' %}
+
+{% block content %}
+    <h1>Task details:</h1>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Data sets:</strong></p>
+    <ul>
+        {% for data in data_source %}
+            <li>{{ data }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block saved %}
+
+{% endblock %}
