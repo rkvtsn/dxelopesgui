@@ -6,6 +6,8 @@ import httplib2
 from urllib.request import quote
 import re
 
+import collections
+
 options_resp = [
     {
         "type": {
@@ -216,7 +218,7 @@ get_env2_resp = {
     "servers": [
         {
             "id": "a9c49f04-79cf-4b81-825f-51083e8f8b74",
-            "status": "ACTIVE",
+            "status": "SLEEP",
             "name": "model5-server-0",
             "cpus": "1",
             "ram": "512",
@@ -266,7 +268,7 @@ env_list_resp = {
     "bc5e23fa-231b-4a17-a146-c3288331b1b8": "MultiThread 4"
 }
 
-MAIN_URL = "http://127.0.0.1:8080/dmcapi/"
+MAIN_URL = "http://localhost:8080/dmcapi-rest/"
 DATA_URL = "http://localhost:8080/DataType/MetaData/"
 
 
@@ -613,16 +615,16 @@ def env_details(request, project, id):
 
     #env = get_env1_resp
     if id in ('0', '1', '2'):
-        env = env_resp[int(id)]
+        environment = env_resp[int(id)]
     else:
-        env = env_resp[0]
+        environment = env_resp[0]
 
-
+    environment = collections.OrderedDict(sorted(environment.items()))
     # if len(result) == 0:
     #     return render(request, 'my404.html', {'user': user_name,
     #                                           'project_name': project})
 
-    return render(request, 'environment/details.html', {'env_data': env,
+    return render(request, 'environment/details.html', {'env_data': environment,
                                                         'user': user_name,
                                                         'project_name': project})
 
@@ -853,7 +855,7 @@ def tasks(request, project):
 
     # result inf
     result_data = {'listPhysicalDataSet': list_physical_data_set, 'saved_data': saved_data,
-                   'user': user, 'project_name': project, 'environment_list': environments,
+                   'user': user, 'project_name': project, 'environment_list': [],
                    'mining_function_list': mining_function_list}
 
     return render(request, 'tasks/tasks.html', result_data)
