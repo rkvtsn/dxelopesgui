@@ -1,4 +1,23 @@
+
+var srv = {
+
+};
+
 $(document).ready(function () {
+
+    var serverMessages = $("#server-messages");
+
+    srv.showServerMessages = function(msgArray){
+        serverMessages.find('li').remove();
+        serverMessages.hide();
+
+        if (msgArray == null || msgArray.length == 0) return;
+
+        $.each(msgArray, function(index,msg) {
+            serverMessages.append('<li>'+msg+'</li>')
+        });
+        serverMessages.show();
+    };
 
     // Error messages ---------------------------------------------------------------
     function errorMessage(container, message) {

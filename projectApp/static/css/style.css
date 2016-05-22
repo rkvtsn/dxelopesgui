@@ -42,8 +42,9 @@ textarea.form-control {
     margin: 0 auto;
     width: 298px;
 }
-
-
+#server-messages {
+    display: none;
+}
 
 
 

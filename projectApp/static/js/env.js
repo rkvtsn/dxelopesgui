@@ -4,16 +4,12 @@ $(document).ready(function () {
     $("form#env-conf").submit(function(e) {
         e.preventDefault();
 
-        // if ($("#name").val().trim().length === 0){
-        //     alert('error');// errorMessage($(this).find('.error-messages'), "error");
-        //     return;
-        // }
-
         var data = $(this).serialize();
 
         $.post($(this).attr('action'), data, function (json) {
             if (json.result == "error") {
-                console.log(json.errors);
+                //console.log(json.errors);
+                srv.showServerMessages(json.errors);
             }
             else {
                 document.forms[0].reset();

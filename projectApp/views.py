@@ -352,7 +352,7 @@ def make_request(url, method, request=None, data=None):
     body = bytes(pkg.encode('utf-8'))
 
     h = httplib2.Http()
-    if request != None:
+    if request is not None:
         h.add_credentials(request.session['user'], request.session['password'])
 
     return h.request(url, method=method, body=body, headers={'content-type': 'application/json;charset=UTF-8',
@@ -508,7 +508,6 @@ def form_data(request, project):
     resp, content = send_message(user, password, url, "PUT", body, {'content-type': 'application/json',
                                                                     'accept': 'application/json'})
 
-    s = 1
     if resp.status == 201:
         data_name = request.POST['name']
         result = {'result': 'success', 'data_name': data_name}
@@ -709,19 +708,12 @@ def env_add(request, project):
         for k, v in server_params:
             d['servers'][i][k.replace('[]', '')] = v[i]
 
-    body = json.dumps(d)
-
     user = request.session['user']
     resp, content = make_request(url=MAIN_URL + 'user/' + quote(user, '') + '/project/' + quote(project, '') + '/env/',
-                                 method='PUT', request=request, data=body)
+                                 method='PUT', request=request, data=d)
 
-    # # if request.POST['name'].strip() == "":
-    # #     result['msg'] = "Error: Name is empty!"
-    # # else:
-    # #     env_item = {'name': request.POST['name'], 'id': len(environments)}
-    # #     global environments
-    # #     environments.append(env_item)
-    # #     result = {'result': 'success', 'env_data': environments}
+    if resp.status == 200:
+        result = {'result': 'success'}
 
     return JsonResponse(result)
 
@@ -734,7 +726,7 @@ def env_delete(request, project):
 
     id = request.POST['id']
 
-    url = MAIN_URL + "user/{userID}/project/{projectID}/env/{EnvID}" % (quote(user, ''), quote(project, ''), quote(id, ''))
+    url = MAIN_URL + "user/%s/project/%s/env/%s" % (quote(user, ''), quote(project, ''), quote(id, ''))
 
     resp, content = make_request(url, 'DELETE', request)
     if resp.status == 200:
